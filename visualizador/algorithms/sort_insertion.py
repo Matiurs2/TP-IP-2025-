@@ -1,7 +1,7 @@
 # Contrato: init(vals), step() -> {"a": int, "b": int, "swap": bool, "done": bool}
 
 items = []
-n = 0
+n = 0      #cantidad de elemetnos en la lista
 i = 0      # elemento que queremos insertar
 j = None   # cursor de desplazamiento hacia la izquierda (None = empezar)
 temp = None
@@ -10,7 +10,7 @@ def init(vals):
     global items, n, i, j
     items = list(vals)
     n = len(items)
-    i = 1      # común: arrancar en el segundo elemento
+    i = 0      
     j = None
 
 def step():
@@ -19,7 +19,7 @@ def step():
         return {"done": True}
 
     if j is None:
-        j = i
+        j = i 
         return {"highlight": True}
 
     a = j
